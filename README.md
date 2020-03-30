@@ -14,10 +14,11 @@ The entire solution is designed to be deployed using [Hashicorp Terraform](https
 - an Azure AD service principal and RBAC assignment
 - an AKS cluster configured with Advanced networking and monitoring addon
 
-The solution uses a [Terraform backend](https://www.terraform.io/docs/backends/types/azurerm.html) supported by an Azure Storage Account. This is deployed using the steps documented in the Bash script [createTfRemoteState.sh](scripts/createTfRemoteState.sh).
+The solution uses a [Terraform backend](https://www.terraform.io/docs/backends/types/azurerm.html) supported by an Azure Storage Account. This is deployed using the steps documented in the Bash script [createTfRemoteState.sh](scripts/createTfRemoteState.sh) and [deployAksSolution.sh](scripts/deployAksSolution.sh).
 
 ## Requirements
 
 The script assumes that you are running a system with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed. You should also have authenticated against an Azure environment using `az login` with credentials which have sufficient permissions in the Azure AD tenant to create new service principals and Owner permissions at the subscription scope. The environment also requires [Hashicorp Terraform](https://www.terraform.io/) - the demo was built and tested using Terraform v0.12.8.
 
 The steps in the deployment script can be run on any system which support running Bash scripts: [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) on Windows 10, Linux or MacOS. You can also execute all the steps using an [Azure Cloud Shell](https://azure.microsoft.com/en-au/features/cloud-shell/) session, either directly via the Azure Portal, using the [Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) extension in VSCode or using the new [Windows Terminal](https://github.com/microsoft/terminal).
+
