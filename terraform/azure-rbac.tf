@@ -13,5 +13,5 @@ resource "azurerm_role_assignment" "sp-aks-network" {
 resource "azurerm_role_assignment" "sp-aks" {
   scope                = data.azurerm_subscription.primary.id
   role_definition_name = "Contributor"
-  principal_id         = "${azuread_service_principal.sp-aks.id}"
+  principal_id         = "${azuread_service_principal.sp-aks.object_id}"
 }
