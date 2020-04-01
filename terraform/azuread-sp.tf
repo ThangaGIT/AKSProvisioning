@@ -11,7 +11,7 @@ resource "azuread_application" "sp-aks" {
 }
 resource "azuread_service_principal" "sp-aks" {
   application_id                = "${azuread_application.sp-aks.application_id}"
-  app_role_assignment_required  = true
+  app_role_assignment_required  = false
 }
 resource "azuread_service_principal_password" "sp-aks" {
   service_principal_id  = "${azuread_service_principal.sp-aks.id}"
